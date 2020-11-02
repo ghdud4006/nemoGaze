@@ -15,7 +15,7 @@ while True:
 
     # We send this frame to GazeTracking to analyze it
     gaze.refresh(frame)
-
+    # anotation gaze
     frame = gaze.annotated_frame()
     text = ""
 
