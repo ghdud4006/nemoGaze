@@ -8,7 +8,9 @@ class Calibration(object):
     This class calibrates the pupil detection algorithm by finding the
     best binarization threshold value for the person and the webcam.
     """
-
+    """
+    class that calibrates the pupul detection
+    """ 
     def __init__(self):
         self.nb_frames = 20
         self.thresholds_left = []
