@@ -2,7 +2,9 @@ from __future__ import division
 import cv2
 from .pupil import Pupil
 
-
+"""
+class that calibrates the pupil detection algorithm
+"""
 class Calibration(object):
     """
     This class calibrates the pupil detection algorithm by finding the
