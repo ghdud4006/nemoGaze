@@ -1,7 +1,9 @@
 import numpy as np
 import cv2
 
-
+"""
+class that detects the iris of an eye
+"""
 class Pupil(object):
     """
     This class detects the iris of an eye and estimates
