@@ -27,7 +27,7 @@ while True:
     focusing=0
 
     if faces:
-        print("faces found")
+        print("Faces found")
         for face in faces:
 
             #if face:
