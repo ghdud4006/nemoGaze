@@ -17,6 +17,7 @@ _, frame = webcam.read()
     # We send this frame to GazeTracking to analyze it
 gaze.refresh(frame)
 
+# anotate frame
 frame = gaze.annotated_frame()
     text = ""
 
