@@ -13,7 +13,7 @@ from gaze_tracking import GazeTracking
 gaze = GazeTracking()
 webcam = cv2.VideoCapture(0)
 face_detector = dlib.get_frontal_face_detector()
-
+# get a new frame
 while True:
     # We get a new frame from the webcam
     _, frame = webcam.read()
