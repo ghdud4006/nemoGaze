@@ -47,7 +47,7 @@ class Pupil(object):
 
         contours, _ = cv2.findContours(self.iris_frame, cv2.RETR_TREE, cv2.CHAIN_APPROX_NONE)[-2:]
         contours = sorted(contours, key=cv2.contourArea)
-
+        # capture moments based on x, y
         try:
             moments = cv2.moments(contours[-2])
             self.x = int(moments['m10'] / moments['m00'])
