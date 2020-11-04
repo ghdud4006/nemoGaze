@@ -6,7 +6,7 @@ from .eye import Eye
 from .calibration import Calibration
 
 """
-class that tracks the user's gaze
+class that tracks the user's gaze.
 """
 class GazeTracking(object):
     """
