@@ -67,7 +67,7 @@ right_pupil = gaze.pupil_right_coords()
     cv2.putText(frame, "Right pupil: " + str(right_pupil), (90, 165), cv2.FONT_HERSHEY_DUPLEX, 0.9, (147, 58, 31), 1)
 
 
-    cv2.imshow("Demo", frame)
+    cv2.imshow("Demo.", frame)
 
     if cv2.waitKey(1) == 27:
     break
