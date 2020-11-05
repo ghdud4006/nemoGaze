@@ -15,6 +15,9 @@ class GazeTracking(object):
     and pupils and allows to know if the eyes are open or closed
     """
 
+    """
+	init frame, and gaze
+    """
     def __init__(self):
         self.frame = None
         self.eye_left = None
