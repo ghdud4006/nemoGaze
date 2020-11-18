@@ -7,5 +7,15 @@ nemoGaze의 목적은 사람들이 현재 화면의 어디에 집중하고 있�
 
 ### 사용 환경
 - NEMOSHELL 플랫폼에서 동작
+- 우분투 환경에서 동작
+- GazeTracking API 사용
+- 파이썬3 환경에서 동작
+
+### 사용 환경
+실행방법
+1. sudo apt-get install cmake
+2. sudo apt-get install libboost-all-dev
+3. pip3 install -r requirements.txt
+4. python3 gaze_tracking.py
 
 *이 기술은 SW스타랩으로부터 지원받았음.
