@@ -8,6 +8,7 @@ Check the README.md for complete documentation.
 
 import cv2
 import dlib
+import datetime as pydatetime
 from gaze_tracking import GazeTracking
 
 gaze = GazeTracking()
@@ -16,11 +17,19 @@ face_detector = dlib.get_frontal_face_detector()
 # get a new frame
 while True:
     # We get a new frame from the webcam
+
     _, frame = webcam.read()
 
     #print("in")
     
     frame2 = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+
+    face_start_time = pydatetime.datetime.now().timestamp()
+    face_end_time = 0.1;
+    gaze_start_time = 0.1;
+    gaze_end_time = 0.1;
+    face_detection_time = ""
+
     faces = face_detector(frame2)
 
     right_cnt=0
@@ -30,12 +39,15 @@ while True:
     focusing=0
 
     if faces:
-        print("Faces found")
+        face_end_time = pydatetime.datetime.now().timestamp()
+        face_detection_time = str(face_end_time - face_start_time)
+        
+        gaze_start_time = pydatetime.datetime.now().timestamp()
         for face in faces:
 
             #if face:
                 #print("face found")
-
+    
             gaze.refresh(frame, face)
 
             frame = gaze.annotated_frame()
@@ -88,7 +100,21 @@ while True:
     cv2.putText(frame, "Current people: " + str(focusing), (90, 200), cv2.FONT_HERSHEY_DUPLEX, 1.6, (0, 0, 0), 2)
     cv2.putText(frame, text, (90, 60), cv2.FONT_HERSHEY_DUPLEX, 1.6, (147, 58, 31), 2)
     cv2.imshow("Demo", frame)
+    
+    gaze_end_time = pydatetime.datetime.now().timestamp()
+    gaze_detection_time = str(gaze_end_time - gaze_start_time)
 
+    # print result
+    f1 = open("/home/dclab/nemoGaze/LOG-FaceDetection","a")
+    f1.write(text+":"+face_detection_time+"\n")
+    f2 = open("/home/dclab/nemoGaze/LOG-GazeDetection","a")
+    f2.write(text+":"+gaze_detection_time+"\n")
+
+    print(text+"_face_detection_time:"+face_detection_time+"\n")
+    print(text+"_gaze_detection_time:"+gaze_detection_time+"\n")
+    
+    f1.close()
+    f2.close()
 
     if cv2.waitKey(1) == 27:
         break
