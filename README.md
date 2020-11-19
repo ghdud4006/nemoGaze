@@ -11,8 +11,7 @@ nemoGaze의 목적은 사람들이 현재 화면의 어디에 집중하고 있�
 - GazeTracking API 사용
 - 파이썬3 환경에서 동작
 
-### 사용 환경
-실행방법
+### 실행 방법
 1. sudo apt-get install cmake
 2. sudo apt-get install libboost-all-dev
 3. pip3 install -r requirements.txt
