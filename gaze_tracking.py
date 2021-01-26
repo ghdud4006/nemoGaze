@@ -81,11 +81,12 @@ while True:
             text = "Looking right"
             focusing=right_cnt
         elif(left_cnt>right_cnt and left_cnt>center_cnt):
-            cv2.rectangle(frame, (1280, 0),  (1920, 1080), (0, 0, 255), 3)
+	    cv2.rectangle(frame, (640, 0),  (1280, 1080), (0, 0, 255), 3)
+            #cv2.rectangle(frame, (1280, 0),  (1920, 1080), (0, 0, 255), 3)
             text = "Looking left"
             focusing=left_cnt
         elif(center_cnt>right_cnt and center_cnt>left_cnt):
-            cv2.rectangle(frame, (640, 0),  (1280, 1080), (0, 0, 255), 3)
+            #cv2.rectangle(frame, (640, 0),  (1280, 1080), (0, 0, 255), 3)
             text = "Looking center"
             focusing=center_cnt
         else:
@@ -98,8 +99,8 @@ while True:
 
 
     cv2.putText(frame, "Current people: " + str(focusing), (90, 200), cv2.FONT_HERSHEY_DUPLEX, 1.6, (0, 0, 0), 2)
-    cv2.putText(frame, text, (90, 60), cv2.FONT_HERSHEY_DUPLEX, 1.6, (147, 58, 31), 2)
-    cv2.imshow("Demo", frame)
+    cv2.putText(frame, text, (50, 500), cv2.FONT_HERSHEY_DUPLEX, 1.6, (147, 58, 31), 2)
+    cv2.imshow("NemoGaze", frame)
     
     gaze_end_time = pydatetime.datetime.now().timestamp()
     gaze_detection_time = str(gaze_end_time - gaze_start_time)
@@ -109,9 +110,6 @@ while True:
     f1.write(text+":"+face_detection_time+"\n")
     f2 = open("/home/dclab/nemoGaze/LOG-GazeDetection","a")
     f2.write(text+":"+gaze_detection_time+"\n")
-
-    print(text+"_face_detection_time:"+face_detection_time+"\n")
-    print(text+"_gaze_detection_time:"+gaze_detection_time+"\n")
     
     f1.close()
     f2.close()
