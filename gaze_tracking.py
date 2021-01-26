@@ -104,12 +104,6 @@ while True:
     
     gaze_end_time = pydatetime.datetime.now().timestamp()
     gaze_detection_time = str(gaze_end_time - gaze_start_time)
-
-    # print result
-    f1 = open("/home/dclab/nemoGaze/LOG-FaceDetection","a")
-    f1.write(text+":"+face_detection_time+"\n")
-    f2 = open("/home/dclab/nemoGaze/LOG-GazeDetection","a")
-    f2.write(text+":"+gaze_detection_time+"\n")
     
     f1.close()
     f2.close()
