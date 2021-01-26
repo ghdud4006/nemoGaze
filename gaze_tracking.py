@@ -81,7 +81,7 @@ while True:
             text = "Looking right"
             focusing=right_cnt
         elif(left_cnt>right_cnt and left_cnt>center_cnt):
-	    cv2.rectangle(frame, (640, 0),  (1280, 1080), (0, 0, 255), 3)
+            cv2.rectangle(frame, (640, 0),  (1280, 1080), (0, 0, 255), 3)
             #cv2.rectangle(frame, (1280, 0),  (1920, 1080), (0, 0, 255), 3)
             text = "Looking left"
             focusing=left_cnt
