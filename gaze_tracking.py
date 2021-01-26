@@ -98,8 +98,8 @@ while True:
         frame = gaze.annotated_frame()
 
 
-    cv2.putText(frame, "Current people: " + str(focusing), (90, 200), cv2.FONT_HERSHEY_DUPLEX, 1.6, (0, 0, 0), 2)
-    cv2.putText(frame, text, (500, 500), cv2.FONT_HERSHEY_DUPLEX, 1.6, (147, 58, 31), 2)
+    cv2.putText(frame, "Current people: " + str(focusing), (90, 200), cv2.FONT_HERSHEY_DUPLEX, 1.6, (255, 255, 255), 2)
+    cv2.putText(frame, text, (500, 600), cv2.FONT_HERSHEY_DUPLEX, 1.6, (0, 0, 240), 2)
     cv2.imshow("NemoGaze", frame)
     
     gaze_end_time = pydatetime.datetime.now().timestamp()
