@@ -104,9 +104,6 @@ while True:
     
     gaze_end_time = pydatetime.datetime.now().timestamp()
     gaze_detection_time = str(gaze_end_time - gaze_start_time)
-    
-    f1.close()
-    f2.close()
 
     if cv2.waitKey(1) == 27:
         break
