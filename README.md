@@ -17,4 +17,8 @@ nemoGaze의 목적은 사람들이 현재 화면의 어디에 집중하고 있�
 3. pip3 install -r requirements.txt
 4. python3 gaze_tracking.py
 
+## Sources Used
+* [Gaze Tracking](https://github.com/antoinelame/GazeTracking) MIT License
+
+
 *이 기술은 SW스타랩으로부터 지원받았음*
